@@ -1,0 +1,242 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10406,        234]
+NotebookOptionsPosition[     10008,        216]
+NotebookOutlinePosition[     10354,        231]
+CellTagsIndexPosition[     10311,        228]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cannon", "[", 
+   RowBox[{
+   "m_", ",", "F_", ",", "\[Alpha]_", ",", "h_", ",", "g_", ",", "tc_"}], 
+   "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"tmax", ",", 
+      RowBox[{"tab", " ", "=", " ", 
+       RowBox[{"{", "}"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"vx", "=", 
+      RowBox[{
+       FractionBox["F", "m"], "*", 
+       RowBox[{"Cos", "[", "\[Alpha]", " ", "]"}], "*", "1"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"vy", "=", 
+      RowBox[{
+       FractionBox["F", "m"], "*", 
+       RowBox[{"Sin", "[", "\[Alpha]", " ", "]"}], "*", "1"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"y", "[", "t_", "]"}], ":=", 
+      RowBox[{"h", "+", 
+       RowBox[{"vy", " ", "*", "t"}], "-", 
+       FractionBox[
+        RowBox[{"g", "*", 
+         SuperscriptBox["t", "2"]}], "2"]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"x", "[", "t_", "]"}], ":=", 
+      RowBox[{"vx", "*", "t"}]}], ";", " ", 
+     RowBox[{"(*", 
+      RowBox[{"dodac", " ", "jeszcze", " ", "opor", " ", "powietrza"}], 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"tmax", " ", "=", " ", 
+      RowBox[{"2.", "*", 
+       RowBox[{"vy", "/", "g"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", 
+      RowBox[{
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"tab", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"x", "[", "i", "]"}], ",", 
+           RowBox[{"y", "[", "i", "]"}]}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", 
+         RowBox[{"tc", "*", "tmax"}], ",", "0.0001"}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "tab", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.75586342046727*^9, 3.755863472256672*^9}, {
+   3.755863516017691*^9, 3.75586358126994*^9}, {3.755863684289503*^9, 
+   3.75586370903232*^9}, {3.755863755664255*^9, 3.755863757560048*^9}, {
+   3.7558638225261955`*^9, 3.755863826557331*^9}, {3.755863908062938*^9, 
+   3.7558640024294453`*^9}, 3.755864169613237*^9, 3.7558642532310696`*^9, {
+   3.755864619080242*^9, 3.755864684235157*^9}, {3.755864864587638*^9, 
+   3.7558649358373804`*^9}, {3.7558649686945753`*^9, 3.755864969196272*^9}, {
+   3.7558650927736673`*^9, 3.755865110591505*^9}, {3.7558651996695805`*^9, 
+   3.7558653710377235`*^9}, {3.755865438004111*^9, 3.7558654474718356`*^9}, {
+   3.755865489034338*^9, 3.755865511576329*^9}, {3.7558655603327885`*^9, 
+   3.755865612974212*^9}, {3.75586578996697*^9, 3.755865796525583*^9}, {
+   3.755865919001525*^9, 3.75586597822355*^9}, {3.7558660629683876`*^9, 
+   3.755866064526995*^9}, {3.7558661605337687`*^9, 3.755866218852014*^9}, {
+   3.7558663164998617`*^9, 3.755866316984952*^9}, {3.755866419077188*^9, 
+   3.7558664228645363`*^9}, {3.7558664585332537`*^9, 
+   3.7558665446229024`*^9}, {3.755866575848009*^9, 3.755866583254897*^9}, {
+   3.755866672245042*^9, 3.7558666862396793`*^9}, {3.755867016865131*^9, 
+   3.755867027227454*^9}, {3.7558670778855257`*^9, 3.755867149804989*^9}, {
+   3.755867726622769*^9, 3.7558677414621277`*^9}, {3.7558680329900427`*^9, 
+   3.75586806520504*^9}, {3.755868097758757*^9, 3.755868206085889*^9}, 
+   3.755868236172287*^9, {3.7558682834059134`*^9, 3.755868315472168*^9}, {
+   3.7558683525911517`*^9, 3.755868540436632*^9}, {3.755945877740465*^9, 
+   3.755945884849343*^9}, {3.7559459700204697`*^9, 3.7559459899491973`*^9}, {
+   3.7559461394235845`*^9, 3.755946162860446*^9}, {3.7559462131337585`*^9, 
+   3.7559462151135345`*^9}, {3.7559462811352215`*^9, 
+   3.7559463143308597`*^9}, {3.755946379908367*^9, 3.7559464016932936`*^9}, {
+   3.7559465683945365`*^9, 3.755946597517125*^9}, {3.7559467540397854`*^9, 
+   3.755946792229446*^9}, {3.7559468264228525`*^9, 3.7559468287335286`*^9}, {
+   3.755946861027022*^9, 3.7559469970460987`*^9}, {3.7559470980784187`*^9, 
+   3.7559470985521774`*^9}, {3.755947349098572*^9, 3.7559473497182255`*^9}, 
+   3.755947431100613*^9, {3.755947546956191*^9, 3.7559475506930504`*^9}, {
+   3.7559477596093893`*^9, 3.755947816430807*^9}, {3.755947852383201*^9, 
+   3.755947873105328*^9}, 3.755948169515106*^9, {3.7564677434806204`*^9, 
+   3.7564677762502184`*^9}}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{{3.7558642145158467`*^9, 3.7558642439820185`*^9}, 
+   3.7558657843024826`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{"cannon", "[", 
+     RowBox[{
+     "mass", ",", "force", ",", "angle", ",", "height", ",", "gravity", ",", 
+      "time"}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"mass", ",", "0", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"force", ",", "0", ",", "10"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"angle", ",", 
+      RowBox[{"0", " ", "Degree"}], ",", 
+      RowBox[{"90", " ", "Degree"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"height", ",", "0", ",", "10"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"gravity", ",", "9.81"}], "}"}], ",", "0", ",", "10"}], "}"}], 
+    ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"time", ",", "0", ",", "1"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7558644027539825`*^9, 3.7558644418730993`*^9}, {
+  3.7558658224776955`*^9, 3.7558658765226836`*^9}, {3.755866410821968*^9, 
+  3.755866415280324*^9}, {3.7558670369431725`*^9, 3.7558670398519316`*^9}, {
+  3.7558670742912345`*^9, 3.7558670750933723`*^9}, {3.7559459806604676`*^9, 
+  3.755945981582282*^9}, {3.7559460449589787`*^9, 3.7559460466619844`*^9}, {
+  3.7559461658638587`*^9, 3.7559461670669017`*^9}, {3.7559462473311934`*^9, 
+  3.7559462528772264`*^9}, {3.755947085297743*^9, 3.7559472989463134`*^9}, {
+  3.755947382594385*^9, 3.7559474042669587`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`angle$$ = 
+    0.15707963267948966`, $CellContext`force$$ = 
+    2.32, $CellContext`gravity$$ = 
+    6.5600000000000005`, $CellContext`height$$ = 0., $CellContext`mass$$ = 
+    1.1, $CellContext`time$$ = 0.9400000000000001, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`mass$$], 0, 10}, {
+      Hold[$CellContext`force$$], 0, 10}, {
+      Hold[$CellContext`angle$$], 0, 90 Degree}, {
+      Hold[$CellContext`height$$], 0, 10}, {{
+       Hold[$CellContext`gravity$$], 9.81}, 0, 10}, {
+      Hold[$CellContext`time$$], 0, 1}}, Typeset`size$$ = {
+    360., {105., 110.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`mass$9439$$ = 
+    0, $CellContext`force$9440$$ = 0, $CellContext`angle$9441$$ = 
+    0, $CellContext`height$9442$$ = 0, $CellContext`gravity$9443$$ = 
+    0, $CellContext`time$9444$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`angle$$ = 0, $CellContext`force$$ = 
+        0, $CellContext`gravity$$ = 9.81, $CellContext`height$$ = 
+        0, $CellContext`mass$$ = 0, $CellContext`time$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`mass$$, $CellContext`mass$9439$$, 0], 
+        Hold[$CellContext`force$$, $CellContext`force$9440$$, 0], 
+        Hold[$CellContext`angle$$, $CellContext`angle$9441$$, 0], 
+        Hold[$CellContext`height$$, $CellContext`height$9442$$, 0], 
+        Hold[$CellContext`gravity$$, $CellContext`gravity$9443$$, 0], 
+        Hold[$CellContext`time$$, $CellContext`time$9444$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`cannon[$CellContext`mass$$, \
+$CellContext`force$$, $CellContext`angle$$, $CellContext`height$$, \
+$CellContext`gravity$$, $CellContext`time$$], 
+      "Specifications" :> {{$CellContext`mass$$, 0, 
+         10}, {$CellContext`force$$, 0, 10}, {$CellContext`angle$$, 0, 90 
+         Degree}, {$CellContext`height$$, 0, 
+         10}, {{$CellContext`gravity$$, 9.81}, 0, 10}, {$CellContext`time$$, 
+         0, 1}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {222., 228.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.755946768048625*^9, 3.7559467988246593`*^9, {3.7559468691403646`*^9, 
+   3.755946966600546*^9}, {3.755947305970311*^9, 3.7559473535870085`*^9}, {
+   3.7559473900311174`*^9, 3.755947405186432*^9}, 3.7559474362466407`*^9, 
+   3.755947771718421*^9, 3.755947818961356*^9, 3.7559478560910687`*^9, 
+   3.7564676427433243`*^9, 3.7564677824786673`*^9}]
+}, Open  ]]
+},
+WindowSize->{650, 716},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4334, 86, 304, "Input"],
+Cell[4895, 108, 143, 2, 50, "Input"],
+Cell[CellGroupData[{
+Cell[5063, 114, 1564, 34, 164, "Input"],
+Cell[6630, 150, 3362, 63, 467, "Output"]
+}, Open  ]]
+}
+]
+*)
+
